@@ -5,13 +5,13 @@ Custom KiCad PCB for a battery-powered, ESP32-class device intended to monitor r
 ## Design previews
 
 ### 3D view
-![PCB 3D Render](docs/pcb_3d.png)
+![PCB 3D Render](docs/PCB_3Dmodel.png)
 
 ### PCB layout
-![PCB Layout](docs/pcb_layout.png)
+![PCB Layout](docs/PCB_DesignV1.png)
 
 ### Schematic
-![Schematic](docs/schematic.png)
+![Schematic](docs/PCB_schematicv1.png)
 
 ## Project overview
 BlackBox is a hardware design project focused on a practical embedded system that combines sensing, local storage, battery operation, and an ESP32-class MCU. The goal is a compact “room health” monitoring unit that can collect measurements and store them for later analysis.
