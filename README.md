@@ -1,32 +1,43 @@
-# BlackBox
+# BlackBox — Room Health / Environmental Monitoring PCB
 
-Custom KiCad PCB for an ESP32-class, battery-powered environmental/room monitoring device.
+A custom **KiCad PCB** for a battery-powered, ESP32-class device intended to monitor room/environment conditions and log data locally.
 
-## What it does
-- Reads sensors: LDR (ambient light), ultrasonic (distance/proximity), + analog sensor input via op-amp stage (LMV321)
-- Logs data to micro-SD
-- Battery powered: VBAT → 3.3V regulation + power management
+## What’s in this repo
+This repository contains the **hardware design source files**:
+- KiCad project: `.kicad_pro`
+- Schematic: `.kicad_sch`
+- PCB layout: `.kicad_pcb`
+- 3D model export: `.step` (if included)
 
-## Hardware overview
-- MCU: ESP32 (planned)
-- Sensors: LDR, ultrasonic, analog front-end (LMV321)
-- Storage: micro-SD
-- Power: battery (VBAT) + 3.3V rail
+> Note: fabrication outputs (Gerbers, drill files, etc.) may be generated from the KiCad project. If present in the repo, they are provided for reference only.
 
-## Repo structure
-- `hardware/` (or root): KiCad project files (`.kicad_pro/.kicad_sch/.kicad_pcb`)
-- `docs/`: exports (schematic PDF, PCB renders)
-- `fab/`: manufacturing outputs (gerbers) (optional)
+## Intended system (high-level)
+Planned functional blocks:
+- **MCU / Wireless:** ESP32-class microcontroller
+- **Sensors:** LDR (ambient light), ultrasonic (distance/proximity), plus analog sensor input(s)
+- **Analog front-end:** LMV321 op-amp stage for conditioning/amplifying analog signals
+- **Storage:** micro-SD card for local data logging
+- **Power:** battery input (VBAT) with 3.3 V regulation and battery management/protection
 
-## How to open
-Install KiCad and open the `.kicad_pro` file.
+## How to open the design
+1. Install **KiCad** (v7+ recommended).
+2. Open the `.kicad_pro` file in this repository.
+3. From KiCad:
+   - Open the schematic (`.kicad_sch`)
+   - Open the PCB (`.kicad_pcb`)
+   - Run **ERC** (schematic checks) and **DRC** (PCB checks) as needed.
 
 ## Status
-- ✅ Schematic + PCB layout
-- 🔜 DRC/ERC clean + manufacture gerbers
-- 🔜 Order PCB + bring-up tests (power rails, SD, sensor IO)
-- 🔜 Firmware + logging format
-- 🔜 Enclosure
+- ✅ Schematic and PCB layout created
+- 🔜 Final DRC/ERC pass and documentation polish
+- 🔜 Order PCB and perform bring-up tests (power rails, SD, sensor IO)
+- 🔜 Firmware (logging format + sampling) and enclosure design
 
-## Notes
-This repo is intended as a portfolio hardware design artifact.
+## Why this project
+This is a portfolio hardware design artifact demonstrating:
+- PCB layout + schematic capture workflow in KiCad
+- Practical embedded hardware system design (power, sensing, storage, interfaces)
+- Manufacturing-ready outputs via Gerber generation (when finalized)
+
+## License
+If no license file is included, assume **all rights reserved** (portfolio viewing only).
